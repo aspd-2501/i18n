@@ -6,6 +6,7 @@
     "PublicationDate": "Publication date",
     "Views": "Number of views",
     "Million": "Million", 
-    "Millions": "Millions"
-
+    "Millions": "Million",
+    "BackgroundColor": "black",
+    "Words": "white"
 }

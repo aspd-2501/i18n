@@ -1,9 +1,7 @@
 import React from "react";
-import { FormattedDate, FormattedNumber, FormattedMessage, useIntl } from "react-intl";
+import { FormattedDate, FormattedNumber, FormattedMessage } from "react-intl";
 
 const Job = (props) => {
-  const intl = useIntl();
-
   const formattedSalary = (salary) => {
     if (salary >= 1) {
       const isPlural = salary > 1;
@@ -18,9 +16,8 @@ const Job = (props) => {
         </>
       );
     }
-  return <FormattedMessage value={salary} />;
-};
-
+    return <FormattedMessage value={salary} />;
+  };
 
   return (
     <tr>
@@ -40,11 +37,10 @@ const Job = (props) => {
       </td>
       <td>
         <FormattedNumber
-        value={props.offer.views}
-        locale="es-ES"
-        style="decimal"
+          value={props.offer.views}
+          locale="es-ES"
         />
-        </td>
+      </td>
     </tr>
   );
 };

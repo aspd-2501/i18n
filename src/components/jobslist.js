@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import Job from "./job";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 const JobsList = () => {
+  const intl = useIntl();
+  const backgroundColor = intl.formatMessage({ id: "BackgroundColor" });
+  const textColor = intl.formatMessage({ id: "Words" });
+  
   const [offers] = useState([
     {
       id: "0001",
@@ -36,15 +40,27 @@ const JobsList = () => {
   return (
     <div>
       <table className="table">
-        <thead className="thead-dark">
+        <thead style={{ backgroundColor: backgroundColor, color: textColor }}>
           <tr>
             <th scope="col">#</th>
-            <th scope="col"><FormattedMessage id="Position"/></th>
-            <th scope="col"><FormattedMessage id="Company"/></th>
-            <th scope="col"><FormattedMessage id="Salary"/></th>
-            <th scope="col"><FormattedMessage id="City"/></th>
-            <th scope="col"><FormattedMessage id="PublicationDate"/></th>
-            <th scope="col"><FormattedMessage id="Views"/></th>
+            <th scope="col">
+              <FormattedMessage id="Position" />
+            </th>
+            <th scope="col">
+              <FormattedMessage id="Company" />
+            </th>
+            <th scope="col">
+              <FormattedMessage id="Salary" />
+            </th>
+            <th scope="col">
+              <FormattedMessage id="City" />
+            </th>
+            <th scope="col">
+              <FormattedMessage id="PublicationDate" />
+            </th>
+            <th scope="col">
+              <FormattedMessage id="Views" />
+            </th>
           </tr>
         </thead>
         <tbody>
